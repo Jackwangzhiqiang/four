@@ -12,10 +12,17 @@ Vue.use(vueRouter);
 import home from '../component/home.vue';
 import shopcar from '../component/shopcar/shopcar.vue';
 import newslist from '../component/newslist/newslist.vue';
+import newsinfo from '../component/newslist/newsinfo.vue';
+import photolist from '../component/photolist/photolist.vue';
+import photo from '../component/photo/photo.vue';
 
 var router1 = new vueRouter({
 		linkActiveClass:'mui-active',
 		routes:[
+			{
+				path:'/',
+				redirect:'/home'
+			},
 			{
 				path:'/home',
 				component:home
@@ -27,6 +34,18 @@ var router1 = new vueRouter({
 			{
 				path:'/newslist',
 				component:newslist
+			},
+			{
+				path:'/newslist/newsinfo/:id',
+				component:newsinfo
+			},
+			{
+				path:'/photo/photolist',
+				component:photolist
+			},
+			{
+				path:'/photo/photo/:id',
+				component:photo
 			}
 		]
 	});
